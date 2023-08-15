@@ -1,0 +1,140 @@
+:root {
+  --primary-color: #0097dd;
+  --secondary-color: orange;
+  --bg-color: #eee;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.container {
+  display: grid;
+  grid-template: minmax(100px, 1fr) minmax(300px, 4fr) / minmax(100px, 1fr) minmax(
+      300px,
+      4fr
+    );
+  height: 100vh;
+}
+/* start header */
+
+.header {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr;
+  padding: 25px;
+  gap: 20px;
+}
+.header .nav {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+.nav i {
+  color: rgb(54, 54, 54);
+  font-size: 2em;
+}
+.nav img {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+.nav .search {
+  flex: 1;
+  margin-right: 100px;
+}
+.nav .search input {
+  width: 100%;
+  background-color: var(--bg-color);
+  border-radius: 25px;
+  height: 50px;
+  border: none;
+  box-shadow: 5px 5px 11px #0000003b;
+  padding: 0 4%;
+  font-size: 1.6em;
+}
+.nav .search input:focus {
+  outline: none;
+  border: 2px solid var(--primary-color);
+}
+.nav h2 {
+  margin-right: 40px;
+}
+.header .profile-header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+}
+.profile-header .text h3 {
+  margin-left: -5x;
+  margin-bottom: 5px;
+}
+.header .profile-header img {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+}
+.profile-header .buttons {
+  margin-left: auto;
+  margin-right: 20px;
+  height: fit-content;
+  gap: 15px;
+  display: flex;
+}
+.profile-header .buttons button {
+  background-color: var(--primary-color);
+  padding: 10px 40px;
+  border: none;
+  color: white;
+  border-radius: 20px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* end headr */
+/* start siderbar */
+.sidebar {
+  background-color: var(--primary-color);
+  grid-area: 1/1/-1/2;
+  display: flex;
+
+  flex-direction: column;
+  color: white;
+  padding: 25px;
+}
+
+.sidebar h3 {
+  font-size: 1.7em;
+}
+.sidebar h1 {
+  font-size: 2.5em;
+}
+.sidebar-header,
+.sidebar li {
+  display: flex;
+  margin-top: 15px;
+  align-items: center;
+}
+.sidebar li i {
+  margin-right: 40px;
+  font-size: 2em;
+}
+.sidebar-header i {
+  font-size: 2.5em;
+  margin-right: 40px;
+}
+.sidebar-header .logo {
+}
+.sidebar .list {
+  flex: 1;
+}
+.sidebar ul {
+  margin-top: 25%;
+}
+/* end sidebar */
+/* start content */
+
+.content {
+  background-color: var(--bg-color);
+}
+/* end content */
