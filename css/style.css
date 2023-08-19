@@ -1,6 +1,7 @@
 :root {
   --primary-color: #0097dd;
   --secondary-color: orange;
+  --secondary-txt: rgb(94, 94, 94);
   --bg-color: #eee;
 }
 * {
@@ -10,7 +11,7 @@
 }
 .container {
   display: grid;
-  grid-template: minmax(100px, 1fr) minmax(300px, 4fr) / minmax(100px, 1fr) minmax(
+  grid-template: minmax(100px, 1fr) minmax(500px, 5fr) / minmax(100px, 1fr) minmax(
       300px,
       4fr
     );
@@ -21,8 +22,8 @@
 .header {
   display: grid;
   grid-template: 1fr 1fr / 1fr;
-  padding: 25px;
-  gap: 20px;
+  padding: 10px 5%;
+  gap: 5px;
 }
 .header .nav {
   display: flex;
@@ -46,7 +47,7 @@
   width: 100%;
   background-color: var(--bg-color);
   border-radius: 25px;
-  height: 50px;
+  height: 30px;
   border: none;
   box-shadow: 5px 5px 11px #0000003b;
   padding: 0 4%;
@@ -80,14 +81,17 @@
   height: fit-content;
   gap: 15px;
   display: flex;
+  align-items: center;
+  height: 100%;
 }
 .profile-header .buttons button {
+  height: 40px;
   background-color: var(--primary-color);
   padding: 10px 40px;
   border: none;
   color: white;
   border-radius: 20px;
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: bold;
 }
 
@@ -136,5 +140,117 @@
 
 .content {
   background-color: var(--bg-color);
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2%;
+  padding: 2% 5% 4%;
+}
+.content h2 {
+  margin-bottom: 15px;
+}
+.content .projects {
+  display: grid;
+  grid-template: auto 1fr/1fr;
+}
+.content .projects .projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+
+  gap: 4%;
+}
+
+.content .projects .project-card {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  border-left: 8px solid var(--secondary-color);
+  background-color: white;
+  border-radius: 8px;
+  padding: 6% 5% 3%;
+}
+.content .project-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+.content .project-card p {
+  color: var(--secondary-txt);
+}
+.content .project-card .icons {
+  display: inline-block;
+  margin-left: auto;
+}
+.content .project-card .icons i {
+  color: var(--secondary-txt);
+  margin-right: 20px;
+  font-size: 1.3rem;
+}
+/* start  right-bar */
+.content .right-bar {
+  min-height: 100%;
+  display: grid;
+  grid-template: minmax(200px, 1.5fr) minmax(200px, 1fr) / auto;
+}
+.right-bar .announcements {
+  height: fit-content;
+  padding: 10%;
+  background-color: white;
+
+  display: grid;
+  grid-template-rows: repeat(3, minmax(50px, 1fr));
+  gap: 10%;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+.right-bar .announcements .announce {
+  position: relative;
+}
+.right-bar .announcements .announce:not(:last-child):after {
+  content: "";
+  background-color: var(--secondary-txt);
+  position: absolute;
+  display: inline-block;
+  height: 1px;
+  bottom: -15%;
+  width: 100%;
+}
+.right-bar .announcements .announce h4 {
+  margin-bottom: 2px;
+}
+.right-bar .announcements .announce p {
+  color: var(--secondary-txt);
+  font-size: 0.9em;
+}
+.right-bar .trending {
+  padding: 5%;
+  background-color: white;
+  display: grid;
+  gap: 10%;
+  border-radius: 8px;
+}
+.right-bar .trending .profile {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+}
+.right-bar .trending .profile .text {
+}
+.right-bar .trending .profile h4 {
+  margin-left: -5px;
+}
+.right-bar .trending .profile p {
+  color: var(--secondary-txt);
+}
+.trending img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.announce-div,
+.trend-div {
+  display: flex;
+  flex-direction: column;
+}
+.announce-div > div,
+.trend-div > div {
+  flex: 1;
 }
 /* end content */
