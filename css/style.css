@@ -1,8 +1,9 @@
 :root {
-  --primary-color: #0097dd;
+  --primary-color: #1992d4;
   --secondary-color: orange;
-  --secondary-txt: rgb(94, 94, 94);
-  --bg-color: #eee;
+  --secondary-txt: rgb(129, 129, 129);
+  --bg-color: #e2e8f0;
+  --shadow: 3px 3px 11px #0007303b;
 }
 * {
   box-sizing: border-box;
@@ -24,6 +25,8 @@
   grid-template: 1fr 1fr / 1fr;
   padding: 10px 5%;
   gap: 5px;
+  box-shadow: var(--shadow);
+  z-index: 2;
 }
 .header .nav {
   display: flex;
@@ -44,12 +47,12 @@
   margin-right: 100px;
 }
 .nav .search input {
-  width: 100%;
+  width: 90%;
   background-color: var(--bg-color);
   border-radius: 25px;
   height: 30px;
   border: none;
-  box-shadow: 5px 5px 11px #0000003b;
+  box-shadow: var(--shadow);
   padding: 0 4%;
   font-size: 1.6em;
 }
@@ -166,6 +169,7 @@
   background-color: white;
   border-radius: 8px;
   padding: 6% 5% 3%;
+  box-shadow: var(--shadow);
 }
 .content .project-card h3 {
   font-size: 1.5em;
@@ -193,6 +197,7 @@
   height: fit-content;
   padding: 10%;
   background-color: white;
+  box-shadow: var(--shadow);
 
   display: grid;
   grid-template-rows: repeat(3, minmax(50px, 1fr));
@@ -222,6 +227,8 @@
 .right-bar .trending {
   padding: 5%;
   background-color: white;
+  box-shadow: var(--shadow);
+
   display: grid;
   gap: 10%;
   border-radius: 8px;
